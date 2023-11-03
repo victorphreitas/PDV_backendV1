@@ -2,7 +2,6 @@ const knex = require('../conexoes/bancodedados')
 const bcrypt = require('bcrypt')
 const cadastrarUsuario = async (req, res) => {
     const { nome, email, senha } = req.body
-    console.log('cheguei aqui');
     try {
         const emailJaExiste = await knex('usuarios').where({ email }).first()
         if (emailJaExiste) {
