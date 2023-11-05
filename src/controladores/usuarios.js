@@ -1,5 +1,9 @@
 const knex = require('../conexoes/bancodedados')
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
+const senhaJwt = require('../senhaJwt');
+
+
 const cadastrarUsuario = async (req, res) => {
     const { nome, email, senha } = req.body
     try {
@@ -28,8 +32,45 @@ const cadastrarUsuario = async (req, res) => {
             mensagem: 'Erro interno do servidor.'
         })
     }
+};
+
+const loginUsuario = async (req, res) => {
+    const {email, senha} = req.body;
+    
+    try {
+        const usuario = await knex('usuarios').where({ email })
+        
+        if(usuario.length < 1){
+            return res.status(400).json({
+                mensagem: 'Email ou senha inválido.'
+            })
+        }
+
+        const senhaValida = await bcrypt.compare(senha, usuario[0].senha);
+
+        if(!senhaValida){
+            return res.status(400).json({
+                mensagem: 'Email ou senha inválido.'
+            })
+        }
+
+        const token = jwt.sign({id: usuario[0].id}, senhaJwt, {expiresIn: '8h'})
+
+        const {senha: _, ...usuarioLogado} = usuario[0]
+        
+        return res.json({
+            usuario: usuarioLogado, token
+        })
+    } catch (error) {
+        return res.status(500)
+        .json({
+            mensagem: 'Erro interno do servidor.'
+        })
+        
+    }
 }
 
 module.exports = {
-    cadastrarUsuario
+    cadastrarUsuario,
+    loginUsuario
 }
