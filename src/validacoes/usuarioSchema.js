@@ -15,6 +15,6 @@ const usuarioSchema = joi.object({
         'string.empty': 'O campo senha é obrigatório.'
     })
 
-})
+});
 
 module.exports = usuarioSchema
