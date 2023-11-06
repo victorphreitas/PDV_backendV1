@@ -2,9 +2,9 @@ const jwt = require("jsonwebtoken");
 const knex = require('../conexoes/bancodedados')
 
 const verificarUsuarioLogado = async (req, res, next) => {
-    const {authorization} = req.headers;
+    const { authorization } = req.headers;
 
-    if(!authorization){
+    if (!authorization) {
         return res.status(401).json({
             mensagem: 'Usuário não autenticado'
         })
@@ -14,22 +14,23 @@ const verificarUsuarioLogado = async (req, res, next) => {
 
     try {
 
-        const {id} = jwt.verify(token, process.env.JWT_SENHA)
+        const { id } = jwt.verify(token, process.env.JWT_SENHA)
 
-        const usuario = knex('usuarios').where({ id }).first()
+        const usuario = await knex('usuarios').where({ id }).first()
 
-        if(!usuario){
+
+        if (!usuario) {
             return res.status(404).json({
                 mensagem: 'Usuário não autenticado.'
             })
         }
 
-        const {senha: _, ...usuarioAutenticado} = usuario
+        const { senha: _, ...usuarioAutenticado } = usuario
 
         req.usuario = usuarioAutenticado
 
         next()
-        
+
     } catch (error) {
         return res.status(401).json({
             mensagem: 'Usuário não autenticado'

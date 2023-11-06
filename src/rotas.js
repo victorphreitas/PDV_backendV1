@@ -1,18 +1,19 @@
 const express = require('express')
-const rotas = express()
+const rota = express()
 
 const { listarCategorias } = require('./controladores/categorias')
-const { cadastrarUsuario,  } = require('./controladores/usuarios')
+const { cadastrarUsuario, detalharPerfilUsuarioLogado, } = require('./controladores/usuarios')
 const validarRequisicao = require('./intermediarios/validarRequisicao')
 const usuarioSchema = require('./validacoes/usuarioSchema')
 const loginSchema = require('./validacoes/loginSchema')
 const loginUsuario = require('./controladores/login')
 const verificarUsuarioLogado = require('./intermediarios/validarUsuarioLogado')
 
-rotas.post('/usuario', validarRequisicao(usuarioSchema), cadastrarUsuario)
-rotas.post('/login', validarRequisicao(loginSchema), loginUsuario )
+rota.post('/usuario', validarRequisicao(usuarioSchema), cadastrarUsuario)
+rota.post('/login', validarRequisicao(loginSchema), loginUsuario)
 
-rotas.use(verificarUsuarioLogado)
-rotas.get('/categoria', listarCategorias)
+rota.use(verificarUsuarioLogado)
+rota.get('/categoria', listarCategorias)
+rota.get('/usuario', detalharPerfilUsuarioLogado)
 
-module.exports = rotas
+module.exports = rota
