@@ -29,9 +29,14 @@ const cadastrarUsuario = async (req, res) => {
             mensagem: 'Erro interno do servidor.'
         })
     }
+
 };
 
+const detalharPerfilUsuarioLogado = async (req, res) => {
+    return res.json(req.usuario);
+}
 
 module.exports = {
-    cadastrarUsuario
+    cadastrarUsuario,
+    detalharPerfilUsuarioLogado
 }
