@@ -3,7 +3,7 @@ const knex = require('../conexoes/bancodedados')
 const listarCategorias = async (req, res) => {
 
   try {
-    const categorias = await knex('categorias').select('*').returning('*')
+    const categorias = await knex('categorias')
 
     if (!categorias) {
       return res.status(404).json({ mensagem: 'Categorias nao encontradas' })
