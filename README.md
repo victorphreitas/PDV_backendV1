@@ -9,6 +9,7 @@
 * <a href="funcionalidades">Funcionalidades</a>
 * <a href="demonstracao">Demonstração</a>
 * <a href="testes">Testes realizados</a>
+* <a href="autores">Autores</a>
 ____
 
 ## **Tecnologias e ferramentas utilizadas:**
@@ -213,4 +214,11 @@ Sucesso:
 Erro:
 ![erroCategorias](./src//assets//ErroListarCategoria.jpg)
 ___
+
+## **Autores**
+- [Igor André](https://www.linkedin.com/in/igor-padua/)
+- [Helingston Pereira](https://www.linkedin.com/in/helingston/)
+- [Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
+- [Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
+- [Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
 
