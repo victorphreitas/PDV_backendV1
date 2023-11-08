@@ -53,7 +53,7 @@ const editarUsuario = async (req, res) => {
             return res.status(400).json({ mensagem: "Não foi possível atualizar o usuário" })
         }
 
-        return res.status(200).json({ atuliazadoComSucesso: usuarioEditado[0] })
+        return res.status(200).json({ atualizadoComSucesso: usuarioEditado[0] })
 
     }
 
