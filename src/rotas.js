@@ -1,5 +1,5 @@
 const express = require('express')
-const rota = express()
+const rota = express.Router()
 
 const { listarCategorias } = require('./controladores/categorias')
 const { cadastrarUsuario, detalharPerfilUsuarioLogado, editarUsuario, } = require('./controladores/usuarios')
