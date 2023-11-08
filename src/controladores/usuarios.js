@@ -49,7 +49,7 @@ const editarUsuario = async (req, res) => {
 
         const senhaCriptografada = await bcrypt.hash(senha, 10)
 
-        const usuarioEditado = await knex('usuarios').update({ nome, email, senha: senhaCriptografada }).returning(['id', 'nome', 'email'])
+        const usuarioEditado = await knex('usuarios').update({ nome, email, senha: senhaCriptografada }).where({id}).returning(['id', 'nome', 'email'])
 
         if (!usuarioEditado[0]) {
             return res.status(400).json({ mensagem: "Não foi possível atualizar o usuário" })
