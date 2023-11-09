@@ -11,9 +11,9 @@ const verificarUsuarioLogado = require('./intermediarios/validarUsuarioLogado')
 
 rota.post('/usuario', validarRequisicao(usuarioSchema), cadastrarUsuario)
 rota.post('/login', validarRequisicao(loginSchema), loginUsuario)
+rota.get('/categoria', listarCategorias)
 
 rota.use(verificarUsuarioLogado)
-rota.get('/categoria', listarCategorias)
 rota.get('/usuario', detalharPerfilUsuarioLogado)
 rota.put('/usuario', validarRequisicao(usuarioSchema), editarUsuario)
 
