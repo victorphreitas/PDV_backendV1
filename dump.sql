@@ -34,7 +34,7 @@ create table produtos(
 create table clientes(
   id serial primary key,
   nome text not null,
-  emai text not null unique,
+  email text not null unique,
   cpf text not null unique,
   cep text default null,
   rua text default null,
