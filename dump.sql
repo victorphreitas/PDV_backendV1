@@ -26,7 +26,7 @@ values('Informática'), ('Celulares'), ('Beleza e Perfumaria'),
 
 create table produtos(
   id serial primary key,
-  descricao text not null,
+  descricao text not null unique,
   quantidade_estoque int not null,
   valor int not null,
   categoria_id int not null references categorias(id));
