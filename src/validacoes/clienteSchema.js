@@ -15,7 +15,9 @@ const clienteSchema = joi.object({
     cpf: joi.string().pattern(new RegExp('^[0-9]{11}$')).required().messages({
         'any.required': 'O campo cpf é obrigatório.',
         'string.empty': 'O campo cpf é obrigatório.',
-        'string.pattern.base': 'Informe um cpf válido.'
+        'string.pattern.base': 'Informe um cpf válido.',
+        'string.base': 'Informe um cpf válido.'
+
     })
 });
 
