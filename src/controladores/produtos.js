@@ -35,6 +35,51 @@ const cadastrarProduto = async (req, res) => {
     }
 }
 
+const editarProduto = async (req, res) => {
+    const { descricao, quantidade_estoque, valor, categoria_id } = req.body
+    const { id } = req.params
+
+    try {
+        const produto = await knex('produtos').where({ id }).first()
+
+        if (!produto) {
+            return res.status(404).json({ mensagem: 'Não foi possível encontrar o produto.' })
+        }
+
+        const categoria = await knex('categorias').where({ id: categoria_id }).first()
+
+        if (!categoria) {
+            return res.status(404).json({ mensagem: 'Não foi possível encontrar a categoria informada.' })
+        }
+
+        const produtoJaExiste = await knex('produtos').where({ descricao }).andWhere('id', '!=', id).first()
+
+        if (produtoJaExiste) {
+            return res.status(400).json({ mensagem: 'Este produto já está cadastrado no banco de dados.' })
+        }
+
+        const produtoAtualizado = await knex('produtos').update({
+            descricao,
+            quantidade_estoque,
+            valor,
+            categoria_id
+        }).where({ id }).returning('*')
+
+        if (!produtoAtualizado) {
+            return res.status(400).json({ mensagem: 'Não foi possível atualizar o produto.' })
+        }
+
+        return res.json({ produtoAtualizado: produtoAtualizado[0] })
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            mensagem: 'Erro interno do servidor.'
+        })
+    }
+}
+
 module.exports = {
-    cadastrarProduto
+    cadastrarProduto,
+    editarProduto
 }
