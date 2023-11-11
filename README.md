@@ -34,8 +34,11 @@ ___
 * [x] <a href="cadastro">Cadastrar usuário</a>
 * [x] <a href="login">Login de usuário</a>
 * [x] <a href="perfil">Buscar perfil do usuário</a>
-* [x] <a href="atualizar">Atualizar usuário</a>
+* [x] <a href="atualizarUsuario">Atualizar usuário</a>
 * [x] <a href= "listarCategoria">Listar categorias</a>
+* [x] <a href= "cadastrarProduto">Cadastrar produto</a>
+* [x] <a href= "listarProdutos">Listar produtos</a>
+* [x] <a href= "atualizarProduto">Listar categorias</a>
 ___
 
 ## **Demonstração**
@@ -213,6 +216,47 @@ Sucesso:
 
 Erro:
 ![erroCategorias](./src//assets//ErroListarCategoria.jpg)
+___
+
+___
+
+### Cadastrar produto
+
+```bash 
+adicionar o codigo
+```
+Sucesso:
+adicionar foto
+
+Erro:
+adicionar foto
+
+___
+
+### Listar produtos
+
+```bash 
+adicionar o codigo
+```
+Sucesso:
+adicionar foto
+
+Erro:
+adicionar foto
+
+___
+
+### Atualizar produto
+
+```bash 
+adicionar o codigo
+```
+Sucesso:
+adicionar foto
+
+Erro:
+adicionar foto
+
 ___
 
 ## **Autores**
