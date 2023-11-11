@@ -79,7 +79,35 @@ const editarProduto = async (req, res) => {
     }
 }
 
+const listarProdutos = async (req, res) => {
+    const { categoria_id } = req.query
+    try {
+        if (categoria_id) {
+            const categoria = await knex('categorias').where({ id: categoria_id }).first()
+
+            if (!categoria) {
+                return res.status(404).json({ mensagem: 'Não foi possível encontrar a categoria informada.' })
+            }
+
+            const produtos = await knex('produtos').where({ categoria_id }).orderBy("id")
+            if (produtos.length < 1) {
+                return res.status(404).json({ mensagem: 'Não foi possível encontrar produtos utilizando a categoria informada.' })
+            }
+            return res.json(produtos)
+        }
+        const produtos = await knex('produtos').orderBy("id")
+        console.log(produtos);
+        return res.json(produtos)
+
+    } catch (error) {
+        console.log(error);
+        return res.status(500).json({
+            mensagem: 'Erro interno do servidor.'
+        })
+    }
+}
 module.exports = {
     cadastrarProduto,
-    editarProduto
+    editarProduto,
+    listarProdutos
 }
