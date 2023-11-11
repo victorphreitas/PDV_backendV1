@@ -110,7 +110,7 @@ const detalharProduto = async (req, res) => {
     const { id } = req.params
 
     try {
-        const produto = await knex('produtos').select('*').where({ id }).first()
+        const produto = await knex('produtos').where({ id }).first()
 
         if (!produto) {
             return res.status(404).json({ mensagem: `Produto de id ${id} nao existe no banco de dados` })
@@ -127,14 +127,14 @@ const excluirProduto = async (req, res) => {
     const { id } = req.params
 
     try {
-        const produtoDeletar = await knex('produtos').select('*').where({ id }).first()
+        const produtoDeletar = await knex('produtos').where({ id }).first()
 
         if (!produtoDeletar) {
             return res.status(404).json({ mensagem: `Produto de id ${id} nao encontrado no banco de dados` })
         }
 
-        await knex('produtos').select('*').where({ id }).del()
-        
+        await knex('produtos').where({ id }).del()
+
         return res.status(201).json(produtoDeletar)
     } catch (error) {
         console.log(error)
