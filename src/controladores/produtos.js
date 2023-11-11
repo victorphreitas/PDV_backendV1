@@ -96,7 +96,6 @@ const listarProdutos = async (req, res) => {
             return res.json(produtos)
         }
         const produtos = await knex('produtos').orderBy("id")
-        console.log(produtos);
         return res.json(produtos)
 
     } catch (error) {
@@ -106,8 +105,47 @@ const listarProdutos = async (req, res) => {
         })
     }
 }
+
+const detalharProduto = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const produto = await knex('produtos').select('*').where({ id }).first()
+
+        if (!produto) {
+            return res.status(404).json({ mensagem: `Produto de id ${id} nao existe no banco de dados` })
+        }
+
+        return res.status(200).json(produto)
+    } catch (error) {
+        console.log(error)
+        return res.status(404).json({ mensagem: "Erro interno do servidor" })
+    }
+}
+
+const excluirProduto = async (req, res) => {
+    const { id } = req.params
+
+    try {
+        const produtoDeletar = await knex('produtos').select('*').where({ id }).first()
+
+        if (!produtoDeletar) {
+            return res.status(404).json({ mensagem: `Produto de id ${id} nao encontrado no banco de dados` })
+        }
+
+        await knex('produtos').select('*').where({ id }).del()
+        
+        return res.status(201).json(produtoDeletar)
+    } catch (error) {
+        console.log(error)
+        return res.status(200).json({ mensagem: "Erro interno do servidor" })
+    }
+}
+
 module.exports = {
     cadastrarProduto,
     editarProduto,
-    listarProdutos
+    listarProdutos,
+    detalharProduto,
+    excluirProduto
 }
