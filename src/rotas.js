@@ -3,7 +3,7 @@ const rota = express.Router()
 
 const { listarCategorias } = require('./controladores/categorias')
 const { cadastrarUsuario, detalharPerfilUsuarioLogado, editarUsuario, } = require('./controladores/usuarios')
-const { cadastrarProduto } = require('./controladores/produtos')
+const { cadastrarProduto, editarProduto, listarProdutos } = require('./controladores/produtos')
 const validarRequisicao = require('./intermediarios/validarRequisicao')
 const usuarioSchema = require('./validacoes/usuarioSchema')
 const loginSchema = require('./validacoes/loginSchema')
@@ -21,4 +21,7 @@ rota.get('/usuario', detalharPerfilUsuarioLogado)
 rota.put('/usuario', validarRequisicao(usuarioSchema), editarUsuario)
 
 rota.post('/produto', validarRequisicao(produtoSchema), cadastrarProduto)
+rota.get('/produto', listarProdutos)
+rota.put('/produto/:id', validarRequisicao(produtoSchema), editarProduto)
+
 module.exports = rota
