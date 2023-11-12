@@ -11,7 +11,7 @@ const produtoSchema = require('./validacoes/produtoSchema')
 const loginUsuario = require('./controladores/login')
 const verificarUsuarioLogado = require('./intermediarios/validarUsuarioLogado')
 const clienteSchema = require('./validacoes/clienteSchema')
-const { cadastrarCliente } = require('./controladores/clientes')
+const { cadastrarCliente, editarCliente, listarClientes, detalharCliente } = require('./controladores/clientes')
 
 rota.post('/usuario', validarRequisicao(usuarioSchema), cadastrarUsuario)
 rota.post('/login', validarRequisicao(loginSchema), loginUsuario)
@@ -29,5 +29,8 @@ rota.get('/produto/:id', detalharProduto)
 rota.delete('/produto/:id', excluirProduto)
 
 rota.post('/cliente', validarRequisicao(clienteSchema), cadastrarCliente)
+rota.put('/cliente/:id',validarRequisicao(clienteSchema), editarCliente)
+rota.get('/cliente', listarClientes)
+rota.get('/cliente/:id', detalharCliente)
 
 module.exports = rota

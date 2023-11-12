@@ -53,7 +53,7 @@ const editarProduto = async (req, res) => {
         }
 
         const produtoJaExiste = await knex('produtos').where({ descricao }).andWhere('id', '!=', id).first()
-
+        
         if (produtoJaExiste) {
             return res.status(400).json({ mensagem: 'Este produto já está cadastrado no banco de dados.' })
         }
@@ -113,7 +113,7 @@ const detalharProduto = async (req, res) => {
         const produto = await knex('produtos').where({ id }).first()
 
         if (!produto) {
-            return res.status(404).json({ mensagem: `Produto de id ${id} nao existe no banco de dados` })
+            return res.status(404).json({ mensagem: `Produto não foi encontrado.` })
         }
 
         return res.status(200).json(produto)
@@ -130,7 +130,7 @@ const excluirProduto = async (req, res) => {
         const produtoDeletar = await knex('produtos').where({ id }).first()
 
         if (!produtoDeletar) {
-            return res.status(404).json({ mensagem: `Produto de id ${id} nao encontrado no banco de dados` })
+            return res.status(404).json({ mensagem: `Produto não foi encontrado.` })
         }
 
         await knex('produtos').where({ id }).del()
