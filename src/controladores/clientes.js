@@ -109,8 +109,6 @@ const detalharCliente = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ mensagem: "Erro interno do servidor." })
   }
-
-
 };
 
 module.exports = {
