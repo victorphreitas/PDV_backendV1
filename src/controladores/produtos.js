@@ -43,19 +43,19 @@ const editarProduto = async (req, res) => {
         const produto = await knex('produtos').where({ id }).first()
 
         if (!produto) {
-            return res.status(404).json({ mensagem: 'Não foi possível encontrar o produto.' })
+            return res.status(404).json({ mensagem: 'Produto não encontrado.' })
         }
 
         const categoria = await knex('categorias').where({ id: categoria_id }).first()
 
         if (!categoria) {
-            return res.status(404).json({ mensagem: 'Não foi possível encontrar a categoria informada.' })
+            return res.status(404).json({ mensagem: 'Categoria não encontrada.' })
         }
 
         const produtoJaExiste = await knex('produtos').where({ descricao }).andWhere('id', '!=', id).first()
         
         if (produtoJaExiste) {
-            return res.status(400).json({ mensagem: 'Este produto já está cadastrado no banco de dados.' })
+            return res.status(400).json({ mensagem: 'Produto já cadastrado.' })
         }
 
         const produtoAtualizado = await knex('produtos').update({
@@ -86,12 +86,12 @@ const listarProdutos = async (req, res) => {
             const categoria = await knex('categorias').where({ id: categoria_id }).first()
 
             if (!categoria) {
-                return res.status(404).json({ mensagem: 'Não foi possível encontrar a categoria informada.' })
+                return res.status(404).json({ mensagem: 'Categoria não encontrada.' })
             }
 
             const produtos = await knex('produtos').where({ categoria_id }).orderBy("id")
             if (produtos.length < 1) {
-                return res.status(404).json({ mensagem: 'Não foi possível encontrar produtos utilizando a categoria informada.' })
+                return res.status(404).json({ mensagem: 'Produto(s) não encontrado(s).' })
             }
             return res.json(produtos)
         }
@@ -119,7 +119,7 @@ const detalharProduto = async (req, res) => {
         return res.status(200).json(produto)
     } catch (error) {
         console.log(error)
-        return res.status(404).json({ mensagem: "Erro interno do servidor" })
+        return res.status(404).json({ mensagem: "Erro interno do servidor." })
     }
 }
 
