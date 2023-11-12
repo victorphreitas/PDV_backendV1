@@ -582,7 +582,7 @@ ___
 };
 ```
 Sucesso:
-![DetalharCliente](./src//assets//DetalharCliente.jpg)
+![DetalharCliente weight="150px"](./src//assets//DetalharCliente.jpg)
 
 Erro:
 ![ErroDetalharCliente](./src//assets//ErroDetalharCliente.jpg)
