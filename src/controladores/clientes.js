@@ -35,8 +35,46 @@ const cadastrarCliente = async (req, res) => {
   } catch (error) {
     return res.status(500).json({ mensagem: "Erro interno do servidor" })
   }
-}
+};
+
+const editarCliente = async (req, res) => {
+  const {nome, email, cpf, cep, rua, numero, bairro, cidade, estado} = req.body;
+  const {id} = req.params;
+
+  try {
+    const cliente = await knex('clientes').where({ id }).first()
+
+    if(!cliente){
+      return res.status(404).json({ mensagem: 'Cliente não encontrado.' })
+    }
+
+    const cpfJaExiste = await knex('clientes').where({cpf}).whereNot('id',id).first()
+    const emailJaExiste = await knex('clientes').where({email}).whereNot('id',id).first()
+
+    if(cpfJaExiste || emailJaExiste){
+      return res.status(400).json({ mensagem: 'Email/CPF já está cadastrado.' })
+    }
+
+    const clienteAtualizado = await knex('clientes').update({
+      nome,
+      email,
+      cpf,
+      cep,
+      rua,
+      numero,
+      bairro,
+      cidade,
+      estado
+    }).where({id}).returning('*')
+
+    return res.json({clienteAtualizado: clienteAtualizado[0]})
+
+  } catch (error) {
+    return res.status(500).json({ mensagem: "Erro interno do servidor" })
+  }
+};
 
 module.exports = {
-  cadastrarCliente
+  cadastrarCliente,
+  editarCliente
 }

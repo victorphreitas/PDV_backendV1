@@ -53,7 +53,7 @@ const editarProduto = async (req, res) => {
         }
 
         const produtoJaExiste = await knex('produtos').where({ descricao }).andWhere('id', '!=', id).first()
-
+        
         if (produtoJaExiste) {
             return res.status(400).json({ mensagem: 'Este produto já está cadastrado no banco de dados.' })
         }
