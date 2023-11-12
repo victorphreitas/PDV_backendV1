@@ -78,10 +78,30 @@ const listarClientes = async (req, res) => {
   const clientes = await knex('clientes').returning('*')
 
   return res.json(clientes)
-}
+};
+
+const detalharCliente = async (req, res) => {
+  const {id} = req.params;
+
+  try {
+    const cliente = await knex('clientes').where({ id }).first()
+
+    if(!cliente){
+      return res.status(404).json({mensagem: 'Cliente não encontrado.'})
+    }
+
+    return res.json(cliente)
+    
+  } catch (error) {
+    return res.status(500).json({ mensagem: "Erro interno do servidor" })
+  }
+
+
+};
 
 module.exports = {
   cadastrarCliente,
   editarCliente,
-  listarClientes
+  listarClientes,
+  detalharCliente
 }
