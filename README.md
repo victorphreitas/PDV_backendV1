@@ -589,7 +589,7 @@ Erro:
 ___
 
 ## **Autores**
-<div display="flex">
+<div class="profile" display>
     
 <img height="80px" src="./src//assets/profileIgor.jpeg">[Igor André](https://www.linkedin.com/in/igor-padua/)
 
