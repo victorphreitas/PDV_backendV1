@@ -589,6 +589,7 @@ Erro:
 ___
 
 ## **Autores**
+<div>
 <img height="80px" src="./src//assets/profileIgor.jpeg">
 
 [Igor André](https://www.linkedin.com/in/igor-padua/)
@@ -601,7 +602,7 @@ ___
 
 <img height="80px" border-radius="50%" src="./src//assets/profileMichael.jpeg">
 
-![Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
+[Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
 ___
 
 <img height="80px" src="./src//assets/profileVictor.jpeg">
@@ -612,5 +613,6 @@ ___
 <img height="80px" src="./src//assets/profileVini.jpeg">
 
 [Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
+</div>
 
 
