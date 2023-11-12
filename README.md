@@ -588,23 +588,23 @@ Erro:
 ![ErroDetalharCliente](./src//assets//ErroDetalharCliente.jpg)
 ___
 ## **Autores**
-![profileIgor]<img height="150px" src="./src//assets/profileIgor.jpeg">
+![profileIgor]<img height="50px" src="./src//assets/profileIgor.jpeg">
 [Igor André](https://www.linkedin.com/in/igor-padua/)
 ___
 
-![profileHelingston]<img height="150px" src="./src//assets/profileHelingston.jpeg">
+![profileHelingston]<img height="50px" src="./src//assets/profileHelingston.jpeg">
 [Helingston Pereira](https://www.linkedin.com/in/helingston/)
 ___
 
-![profileMichael]<img height="150px" src="./src//assets/profileMichael.jpeg">
+![profileMichael]<img height="50px" src="./src//assets/profileMichael.jpeg">
 [Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
 ___
 
-![profileVictor]<img height="150px" src="./src//assets/profileVictor.jpeg">
+![profileVictor]<img height="50px" src="./src//assets/profileVictor.jpeg">
 [Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
 ___
 
-![profileVini]<img height="150px" src="./src//assets/profileVini.jpeg">
+![profileVini]<img height="50px" src="./src//assets/profileVini.jpeg">
 [Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
 
 
