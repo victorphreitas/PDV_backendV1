@@ -592,33 +592,38 @@ ___
 
 <div style="display: flex; justify-content: space-around;">
 
-  
+  <div style="text-align: center;">
     <img height="80px" src="./src/assets/profileIgor.jpeg" alt="Igor André">
     <br>
     <a href="https://www.linkedin.com/in/igor-padua/">Igor André</a>
-  
+  </div>
 
-  
+  <div style="text-align: center;">
     <img height="80px" src="./src/assets/profileHelingston.jpeg" alt="Helingston Pereira">
     <br>
     <a href="https://www.linkedin.com/in/helingston/">Helingston Pereira</a>
-  
+  </div>
 
-  
+  <div style="text-align: center;">
     <img height="80px" src="./src/assets/profileMichael.jpeg" alt="Michael Cruz">
     <br>
     <a href="https://www.linkedin.com/in/michael-vpcruz/">Michael Cruz</a>
-  
+  </div>
+
+  <div style="text-align: center;">
     <img height="80px" src="./src/assets/profileVictor.jpeg" alt="Victor Freitas">
     <br>
     <a href="https://www.linkedin.com/in/victor-freitas-5986a333/">Victor Freitas</a>
-  
+  </div>
+
+  <div style="text-align: center;">
     <img height="80px" src="./src/assets/profileVini.jpeg" alt="Vinícius Gomes">
     <br>
     <a href="https://www.linkedin.com/in/vini-gomes/">Vinícius Gomes</a>
-  
+  </div>
 
 </div>
+
 
 
 
