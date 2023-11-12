@@ -589,21 +589,41 @@ Erro:
 ___
 
 ## **Autores**
-<div class="profile1" display= "flex">
-    
-<img height="80px" src="./src//assets/profileIgor.jpeg"> [Igor André](https://www.linkedin.com/in/igor-padua/)
+
+<div style="display: flex; justify-content: space-around;">
+
+  <div style="text-align: center;">
+    <img height="80px" src="./src/assets/profileIgor.jpeg" alt="Igor André">
+    <br>
+    <a href="https://www.linkedin.com/in/igor-padua/">Igor André</a>
+  </div>
+
+  <div style="text-align: center;">
+    <img height="80px" src="./src/assets/profileHelingston.jpeg" alt="Helingston Pereira">
+    <br>
+    <a href="https://www.linkedin.com/in/helingston/">Helingston Pereira</a>
+  </div>
+
+  <div style="text-align: center;">
+    <img height="80px" src="./src/assets/profileMichael.jpeg" alt="Michael Cruz">
+    <br>
+    <a href="https://www.linkedin.com/in/michael-vpcruz/">Michael Cruz</a>
+  </div>
+
+  <div style="text-align: center;">
+    <img height="80px" src="./src/assets/profileVictor.jpeg" alt="Victor Freitas">
+    <br>
+    <a href="https://www.linkedin.com/in/victor-freitas-5986a333/">Victor Freitas</a>
+  </div>
+
+  <div style="text-align: center;">
+    <img height="80px" src="./src/assets/profileVini.jpeg" alt="Vinícius Gomes">
+    <br>
+    <a href="https://www.linkedin.com/in/vini-gomes/">Vinícius Gomes</a>
+  </div>
+
+</div>
 
 
-<img height="80px" src="./src//assets/profileHelingston.jpeg"> [Helingston Pereira](https://www.linkedin.com/in/helingston/)
-
-
-<img height="80px" border-radius="50%" src="./src//assets/profileMichael.jpeg"> [Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
-
-
-<img height="80px" src="./src//assets/profileVictor.jpeg"> [Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
-
-
-<img height="80px" src="./src//assets/profileVini.jpeg"> [Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
-</div class="profile1">
 
 
