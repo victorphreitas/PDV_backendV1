@@ -582,29 +582,29 @@ ___
 };
 ```
 Sucesso:
-![DetalharCliente weight="150px"](./src//assets//DetalharCliente.jpg)
+![DetalharCliente](./src//assets//DetalharCliente.jpg)
 
 Erro:
 ![ErroDetalharCliente](./src//assets//ErroDetalharCliente.jpg)
 ___
 ## **Autores**
-![profileIgor](./src//assets/profileIgor.jpeg)
+![profileIgor]<img height="150px" src="./src//assets/profileIgor.jpeg">
 [Igor André](https://www.linkedin.com/in/igor-padua/)
 ___
 
-![profileHelingston](./src//assets/profileHelingston.jpeg)
+![profileHelingston]<img height="150px" src="./src//assets/profileHelingston.jpeg">
 [Helingston Pereira](https://www.linkedin.com/in/helingston/)
 ___
 
-![profileMichael](./src//assets/profileMichael.jpeg)
+![profileMichael]<img height="150px" src="./src//assets/profileMichael.jpeg">
 [Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
 ___
 
-![profileVictor](./src//assets/profileVictor.jpeg)
-- [Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
+![profileVictor]<img height="150px" src="./src//assets/profileVictor.jpeg">
+[Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
 ___
 
-![profileVini](./src//assets/profileVini.jpeg)
-- [Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
+![profileVini]<img height="150px" src="./src//assets/profileVini.jpeg">
+[Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
 
 
