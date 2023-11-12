@@ -31,14 +31,25 @@ ___
 
 ## **Funcionalidades**
 
+### Usuários
 * [x] <a href="cadastro">Cadastrar usuário</a>
 * [x] <a href="login">Login de usuário</a>
 * [x] <a href="perfil">Buscar perfil do usuário</a>
 * [x] <a href="atualizarUsuario">Atualizar usuário</a>
-* [x] <a href="listarCategoria">Listar categorias</a>
-* [x] <a href="cadastrarProduto">Cadastrar produto</a>
-* [x] <a href="listarProdutos">Listar produtos</a>
-* [x] <a href="atualizarProduto">Listar categorias</a>
+
+### Produtos
+* [x] <a href="listarCategoria">Listar Categorias</a>
+* [x] <a href="cadastrarProduto">Cadastrar Produto</a>
+* [x] <a href="listarProdutos">Listar Produtos</a>
+* [x] <a href="atualizarProduto">Atualizar Produto</a>
+* [x] <a href="detalharProduto">Detalhar Produto por ID</a>
+* [x] <a href="excluirProduto">Excluir Produto por ID</a>
+
+### Clientes
+* [x] <a href="cadastrarCliente">Cadastrar Cliente</a>
+* [x] <a href="atualizarCliente">Atualizar Cliente</a>
+* [x] <a href="listarClientes">Listar Clientes</a>
+* [x] <a href="detalharCliente">Detalhar Cliente por ID</a>
 ___
 
 ## **Demonstração**
