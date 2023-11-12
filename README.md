@@ -590,25 +590,24 @@ ___
 
 ## **Autores**
 <div display="flex">
-<img height="80px" src="./src//assets/profileIgor.jpeg">
+    
+<img height="80px" src="./src//assets/profileIgor.jpeg">[Igor André](https://www.linkedin.com/in/igor-padua/)
 
-[Igor André](https://www.linkedin.com/in/igor-padua/)
-___
 
 <img height="80px" src="./src//assets/profileHelingston.jpeg">
 
 [Helingston Pereira](https://www.linkedin.com/in/helingston/)
-___
+
 
 <img height="80px" border-radius="50%" src="./src//assets/profileMichael.jpeg">
 
 [Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
-___
+
 
 <img height="80px" src="./src//assets/profileVictor.jpeg">
 
 [Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
-___
+
 
 <img height="80px" src="./src//assets/profileVini.jpeg">
 
