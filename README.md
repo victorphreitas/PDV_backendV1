@@ -594,24 +594,16 @@ ___
 <img height="80px" src="./src//assets/profileIgor.jpeg">[Igor André](https://www.linkedin.com/in/igor-padua/)
 
 
-<img height="80px" src="./src//assets/profileHelingston.jpeg">
-
-[Helingston Pereira](https://www.linkedin.com/in/helingston/)
+<img height="80px" src="./src//assets/profileHelingston.jpeg">[Helingston Pereira](https://www.linkedin.com/in/helingston/)
 
 
-<img height="80px" border-radius="50%" src="./src//assets/profileMichael.jpeg">
-
-[Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
+<img height="80px" border-radius="50%" src="./src//assets/profileMichael.jpeg">[Michael Cruz](https://www.linkedin.com/in/michael-vpcruz/)
 
 
-<img height="80px" src="./src//assets/profileVictor.jpeg">
-
-[Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
+<img height="80px" src="./src//assets/profileVictor.jpeg">[Victor Freitas](https://www.linkedin.com/in/victor-freitas-5986a333/)
 
 
-<img height="80px" src="./src//assets/profileVini.jpeg">
-
-[Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
+<img height="80px" src="./src//assets/profileVini.jpeg">[Vinícius Gomes](https://www.linkedin.com/in/vini-gomes/)
 </div>
 
 
