@@ -6,7 +6,7 @@ const cadastrarUsuario = async (req, res) => {
     try {
         const emailJaExiste = await knex('usuarios').where({ email }).first()
         if (emailJaExiste) {
-            return res.status(400).json({ mensagem: 'Email já cadastrado.' })
+            return res.status(400).json({ mensagem: 'Este email já foi cadastrado.' })
         }
         const senhaCriptografada = await bcrypt.hash(senha, 10)
 
@@ -42,7 +42,7 @@ const editarUsuario = async (req, res) => {
         const emailJaExiste = await knex('usuarios').where({ email }).andWhere('id', '!=', id).first()
 
         if (emailJaExiste) {
-            return res.status(400).json({ mensagem: "Email já cadastrado." })
+            return res.status(400).json({ mensagem: "Este email já foi cadastrado." })
         }
 
         const senhaCriptografada = await bcrypt.hash(senha, 10)
