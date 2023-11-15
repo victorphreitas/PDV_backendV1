@@ -18,25 +18,6 @@ const clienteSchema = joi.object({
         'string.pattern.base': 'Informe um cpf válido.',
         'string.base': 'Informe um cpf válido.'
 
-    }),
-    cep: joi.string().pattern(new RegExp('^[0-9]{8}$')).allow('').messages({
-        'string.pattern.base': 'Informe um cep válido.',
-        'string.base': 'Informe um cep válido.'
-    }), 
-    rua: joi.string().allow('').messages({
-        'string.base': 'Informe uma rua válida.'
-    }),
-    numero: joi.number().allow('').messages({
-        'string.base': 'Informe um numero válido.'
-    }),
-    bairro: joi.string().allow('').messages({
-        'string.base': 'Informe um bairro válido.'
-    }),
-    cidade: joi.string().allow('').messages({
-        'string.base': 'Informe uma cidade válida.'
-    }),
-    estado: joi.string().allow('').messages({
-        'string.base': 'Informe um estado válido.'
     })
 
 });
