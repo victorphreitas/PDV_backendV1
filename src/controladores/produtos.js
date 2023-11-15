@@ -112,7 +112,7 @@ const detalharProduto = async (req, res) => {
     try {
         const produto = await knex('produtos').select('produtos.*', 'categorias.descricao as categoria_nome')
             .join('categorias', 'produtos.categoria_id', 'categorias.id')
-            .where('produtos.id', id).first().debug()
+            .where('produtos.id', id).first()
 
         if (!produto) {
             return res.status(404).json({ mensagem: `Produto não foi encontrado.` })

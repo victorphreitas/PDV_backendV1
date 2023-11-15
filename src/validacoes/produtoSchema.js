@@ -1,7 +1,7 @@
 const joi = require('joi')
 
 const produtoSchema = joi.object({
-    descricao: joi.string().required().messages({
+    descricao: joi.string().trim().required().messages({
         'string.empty': 'O campo descrição é obrigatório',
         'any.required': 'O campo descrição é obrigatório',
         'string.base': 'Informe uma descrição válida.'

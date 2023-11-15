@@ -7,28 +7,29 @@ const enderecoClienteSchema = joi.object({
         'string.base': 'Informe um cep válido.',
         'string.empty': 'Informe um cep válido.'
     }),
-    rua: joi.string().max(140).messages({
+    rua: joi.string().trim().max(140).messages({
         'string.base': 'Informe uma rua válida.',
         'string.empty': 'Informe uma rua válida.',
         'string.max': 'Informe uma rua válida.'
     }),
-    numero: joi.string().max(10).messages({
+    numero: joi.string().max(5).pattern(new RegExp(/^\d+[a-zA-Z]*$/)).messages({
         'string.base': 'Informe um numero válido.',
         'string.empty': 'Informe um numero válido.',
-        'string.max': 'Informe um numero válido.'
+        'string.max': 'Informe um numero válido.',
+        "string.pattern.base": 'Informe um numero válido.'
 
     }),
-    bairro: joi.string().max(140).messages({
+    bairro: joi.string().trim().max(140).messages({
         'string.base': 'Informe um bairro válido.',
         'string.empty': 'Informe um bairro válido.',
         'string.max': 'Informe um bairro válido.'
     }),
-    cidade: joi.string().max(140).messages({
+    cidade: joi.string().trim().max(140).messages({
         'string.base': 'Informe uma cidade válida.',
         'string.empty': 'Informe uma cidade válida.',
         'string.max': 'Informe uma cidade válida.'
     }),
-    estado: joi.string().max(2).messages({
+    estado: joi.string().trim().max(2).messages({
         'string.base': 'Informe um estado válido.',
         'string.empty': 'Informe um estado válido.',
         'string.max': 'Informe um estado válido.'
