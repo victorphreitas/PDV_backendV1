@@ -11,7 +11,7 @@ const cadastrarProduto = async (req, res) => {
 
         const produtoJaExiste = await knex('produtos').where({ descricao }).first()
         if (produtoJaExiste) {
-            return res.status(400).json({ mensagem: 'Este produto já está cadastrado no banco de dados.' })
+            return res.status(400).json({ mensagem: 'Este produto já está cadastrado.' })
         }
 
         const novoProduto = await knex('produtos').insert({
@@ -53,9 +53,9 @@ const editarProduto = async (req, res) => {
         }
 
         const produtoJaExiste = await knex('produtos').where({ descricao }).andWhere('id', '!=', id).first()
-        
+
         if (produtoJaExiste) {
-            return res.status(400).json({ mensagem: 'Produto já cadastrado.' })
+            return res.status(400).json({ mensagem: 'Este produto já está cadastrado.' })
         }
 
         const produtoAtualizado = await knex('produtos').update({
@@ -110,7 +110,9 @@ const detalharProduto = async (req, res) => {
     const { id } = req.params
 
     try {
-        const produto = await knex('produtos').where({ id }).first()
+        const produto = await knex('produtos').select('produtos.*', 'categorias.descricao as categoria_nome')
+            .join('categorias', 'produtos.categoria_id', 'categorias.id')
+            .where('produtos.id', id).first().debug()
 
         if (!produto) {
             return res.status(404).json({ mensagem: `Produto não foi encontrado.` })
