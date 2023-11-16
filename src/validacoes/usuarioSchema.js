@@ -8,7 +8,7 @@ const usuarioSchema = joi.object({
         'string.base': 'Informe um nome válido.',
         'string.min': 'O nome deve ter no mínimo 3 caracteres.',
         'string.max': 'O nome deve ter no máximo 100 caracteres.',
-        'string.pattern.base': 'Informe um nome válido.',
+        'string.pattern.base': 'Informe um nome válido.'
     }),
     email: joi.string().email().required().messages({
         'string.empty': 'O campo email é obrigatório',
