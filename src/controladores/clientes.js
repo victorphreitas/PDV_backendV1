@@ -32,7 +32,7 @@ const cadastrarCliente = async (req, res) => {
 };
 
 const editarCliente = async (req, res) => {
-  const { nome, email, cpf } = req.body;
+  const { nome, email, cpf, cep, rua, numero, bairro, cidade, estado } = req.body;
   const { id } = req.params;
 
   try {
@@ -56,7 +56,13 @@ const editarCliente = async (req, res) => {
     const clienteAtualizado = await knex('clientes').update({
       nome: nome.trim(),
       email,
-      cpf
+      cpf,
+      cep,
+      rua, 
+      numero, 
+      bairro, 
+      cidade, 
+      estado
     }).where({ id }).returning('*')
 
     return res.json({ clienteAtualizado: clienteAtualizado[0] })
