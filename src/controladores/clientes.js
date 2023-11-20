@@ -3,7 +3,7 @@ const knex = require('../conexoes/bancodedados')
 const cadastrarCliente = async (req, res) => {
   const { nome, email, cpf } = req.body
 
-  try {
+  try { 
     const emailJaExiste = await knex('clientes').where({ email }).first()
 
     if (emailJaExiste) {
