@@ -23,7 +23,7 @@ const clienteSchema = joi.object({
         'string.base': 'Informe um cpf válido.'
 
     }),
-    cep: joi.string().allow('').pattern(/^[0-9]{8}$/).required().messages({
+    cep: joi.string().allow('').pattern(/^[0-9]{8}$/).messages({
         'string.pattern.base': 'Informe um cpf válido.',
         'string.base': 'Informe um cpf válido.'
 

@@ -14,6 +14,7 @@ const clienteSchema = require('./validacoes/clienteSchema')
 const { cadastrarCliente, editarCliente, listarClientes, detalharCliente, editarEnderecoCliente } = require('./controladores/clientes')
 const enderecoClienteSchema = require('./validacoes/enderecoClienteSchema')
 const { cadastrarPedido } = require('./controladores/pedidos')
+const pedidoSchema = require('./validacoes/pedidoSchema')
 
 rota.post('/usuario', validarRequisicao(usuarioSchema), cadastrarUsuario)
 rota.post('/login', validarRequisicao(loginSchema), loginUsuario)
@@ -36,6 +37,6 @@ rota.put('/cliente/:id', validarRequisicao(clienteSchema), editarCliente)
 rota.get('/cliente', listarClientes)
 rota.get('/cliente/:id', detalharCliente)
 
-rota.post('/pedido', cadastrarPedido)
+rota.post('/pedido', validarRequisicao(pedidoSchema), cadastrarPedido)
 
 module.exports = rota
