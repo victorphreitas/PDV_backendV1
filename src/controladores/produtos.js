@@ -135,6 +135,12 @@ const excluirProduto = async (req, res) => {
             return res.status(404).json({ mensagem: `Produto não foi encontrado.` })
         }
 
+        const produtoEmPedido = await knex('pedido_produtos').where({ produto_id: id }).first()
+
+        if (produtoEmPedido) {
+            return res.status(400).json({ mensagem: `Não foi posível excluir o produto pois o mesmo se encontra em um pedido.` })
+        }
+
         await knex('produtos').where({ id }).del()
 
         return res.status(201).json({ produtoExcluido: produtoDeletar })
