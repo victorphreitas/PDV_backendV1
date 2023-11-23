@@ -161,10 +161,18 @@ const excluirProduto = async (req, res) => {
         if (produtoEmPedido) {
             return res.status(400).json({ mensagem: `Não foi posível excluir o produto pois o mesmo se encontra em um pedido.` })
         }
+        const { produto_imagem, ...produtoDel } = produtoDeletar
+
+        if (produto_imagem != null) {
+            const imagens = await s3.listFiles()
+            const imagem = imagens.find(img => img.url === produto_imagem)
+            await s3.deleteFile(imagem.path)
+        }
 
         await knex('produtos').where({ id }).del()
 
-        return res.status(201).json({ produtoExcluido: produtoDeletar })
+        return res.status(201).json({ produtoExcluido: produtoDel })
+
     } catch (error) {
         console.log(error)
         return res.status(200).json({ mensagem: "Erro interno do servidor" })
