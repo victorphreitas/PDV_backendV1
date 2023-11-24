@@ -15,6 +15,8 @@ const { cadastrarCliente, editarCliente, listarClientes, detalharCliente, editar
 const enderecoClienteSchema = require('./validacoes/enderecoClienteSchema')
 const { cadastrarPedido, listarPedidos } = require('./controladores/pedidos')
 const pedidoSchema = require('./validacoes/pedidoSchema')
+const multer = require('./multer')
+
 
 rota.post('/usuario', validarRequisicao(usuarioSchema), cadastrarUsuario)
 rota.post('/login', validarRequisicao(loginSchema), loginUsuario)
@@ -25,9 +27,9 @@ rota.use(verificarUsuarioLogado)
 rota.get('/usuario', detalharPerfilUsuarioLogado)
 rota.put('/usuario', validarRequisicao(usuarioSchema), editarUsuario)
 
-rota.post('/produto', validarRequisicao(produtoSchema), cadastrarProduto)
+rota.post('/produto', multer.single('produto_imagem'), validarRequisicao(produtoSchema), cadastrarProduto)
 rota.get('/produto', listarProdutos)
-rota.put('/produto/:id', validarRequisicao(produtoSchema), editarProduto)
+rota.put('/produto/:id', multer.single('produto_imagem'), validarRequisicao(produtoSchema), editarProduto)
 rota.get('/produto/:id', detalharProduto)
 rota.delete('/produto/:id', excluirProduto)
 
