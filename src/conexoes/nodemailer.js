@@ -19,7 +19,8 @@ const emailSender = async (from, to, subject, text) => {
     text, // plain text body  
   }); 
 
-  console.log("Message sent: %s", info.messageId);
+  console.log("Mensagem enviada: %s", info.messageId);
 }
+
 
 module.exports = emailSender
