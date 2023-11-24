@@ -1,9 +1,9 @@
 const knex = require('../conexoes/bancodedados')
 
 const cadastrarCliente = async (req, res) => {
-  const { nome, email, cpf } = req.body
+  const { nome, email, cpf, cep, rua, numero, bairro, cidade, estado } = req.body
 
-  try { 
+  try {
     const emailJaExiste = await knex('clientes').where({ email }).first()
 
     if (emailJaExiste) {
@@ -19,7 +19,13 @@ const cadastrarCliente = async (req, res) => {
     const novoCliente = {
       nome: nome.trim(),
       email,
-      cpf
+      cpf,
+      cep: cep ?? null,
+      rua: rua ?? null,
+      numero: numero ?? null,
+      bairro: bairro ?? null,
+      cidade: cidade ?? null,
+      estado: estado ?? null
     }
 
     await knex('clientes').insert(novoCliente)
@@ -57,12 +63,12 @@ const editarCliente = async (req, res) => {
       nome: nome.trim(),
       email,
       cpf,
-      cep,
-      rua, 
-      numero, 
-      bairro, 
-      cidade, 
-      estado
+      cep: cep ?? cliente.cep,
+      rua: rua ?? cliente.rua,
+      numero: numero ?? cliente.numero,
+      bairro: bairro ?? cliente.bairro,
+      cidade: cidade ?? cliente.cidade,
+      estado: estado ?? cliente.estado
     }).where({ id }).returning('*')
 
     return res.json({ clienteAtualizado: clienteAtualizado[0] })
