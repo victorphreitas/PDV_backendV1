@@ -1,5 +1,5 @@
 const knex = require('../conexoes/bancodedados')
-
+// listar categorias
 const listarCategorias = async (req, res) => {
 
   try {
